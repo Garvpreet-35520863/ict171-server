@@ -1,7 +1,7 @@
 # 🌐 ICT171 Cloud Server Project
 
 **Student Name:** Garvpreet Singh  
-**Student Number:** [Your Student Number]  
+**Student Number:** 35520863 
 **Server IP Address:** 13.238.194.41  
 **DNS Entry:** [https://beyondknown.xyz](https://beyondknown.xyz)  
 **GitHub Repository:** [https://github.com/Garvpreet-35520863/ict171-server](https://github.com/Garvpreet-35520863/ict171-server)  
@@ -9,13 +9,13 @@
 
 ---
 
-## 📘 Introduction
+## Introduction
 
 This document outlines the process of setting up a cloud-based web server on Amazon EC2 using Ubuntu. The server hosts a Travel Blog site accessible via a custom domain (`beyondknown.xyz`) with SSL/TLS encryption. A custom Bash script is used to automate backups. The goal is to make this process easily replicable by peers or IT staff in under an hour.
 
 ---
 
-## 🖥️ Server Setup
+## Server Setup
 
 1. Log in to the AWS Management Console.
 2. Navigate to **EC2 > Instances > Launch Instances**.
@@ -31,7 +31,7 @@ This document outlines the process of setting up a cloud-based web server on Ama
 
 ---
 
-## 💻 Console Access to the Virtual Machine
+## Console Access to the Virtual Machine
 Open the Linux command line on your device. Then use 'cd' to move to the directory where you downloaded your key.Then you can paste the string that was provided to you above.
 
 On your local terminal:
@@ -64,9 +64,9 @@ Now that we have acces to the folder we will design and upload our file.
 To remove existing or trash file in folder use
 
     rm /var/www/html/*
-It removes all fles in the html folder.
+This removes all fles in the html folder.
 
-## 🌐 Upload Website on Server IP Address
+## Upload Website on Server IP Address
 
 On your machine use 'cd' to move to the directory where you have stored your html, css and other important file for website.
 Use:
@@ -127,3 +127,65 @@ Let’s Encrypt certificates are valid for 90 days, so test auto-renewal:
 
        sudo certbot renew --dry-run
 Your site should now have HTTPS. You can check by visiting https://beyondknown.xyz .
+
+## Backup Automation Script
+This project includes a custom Bash script named backup.sh. It automates backups of your website hosted in /var/www/html to a compressed .tar.gz file.
+
+Once you have created a backup script make sure you give it execution permissions
+
+    chmod +x /home/ubuntu/scripts/backup.sh
+
+**Automate with Cron**
+To schedule this backup to run every Sunday at 2 AM
+
+    crontab -e
+Followed by
+
+    0 2 * * 0 /home/ubuntu/scripts/backup.sh >> /home/ubuntu/backup.log 2>&1
+
+**2>&1 means Append both the normal output and errors to backup.log.**
+
+## Git Commands Used
+
+Here are some essential Git commands used in this project:
+
+**Clone the Repository**
+
+    git clone https://github.com/Garvpreet-35520863/ict171-server.git
+
+**Add and Commit changes**
+
+    git add .
+    git commit -m "Task info"
+
+**Push to Github**
+
+    git push origin main
+
+Under username enter your github username and in password you need to enter Personal Access Token as GitHub removed password authentication for Git over HTTPS. So, we need to use a Personal Access Token (PAT) instead of your GitHub password when pushing or pulling.
+
+**How to generate a Personal Access Token (PAT) on GitHub**
+
+1. Go to https://github.com/settings/tokens (you need to be logged in).
+
+2. Click "Generate new token" (or “Generate new token (classic)”).
+
+3. Give it a name, e.g., ICT171 project token.
+
+4. Set an expiration date (e.g., 30 days or longer if you want).
+
+5. Under Select scopes, check:
+
+    repo (Full control of private repositories) — this lets you push and pull code.
+
+    You can leave other scopes unchecked for this purpose.
+
+6. Click Generate token.
+
+7. Copy the token immediately (you won’t see it again).
+
+**Using the PAT in your terminal when Git asks for password**
+
+When Git prompts for Username, enter your GitHub username.
+
+When Git prompts for Password, paste the Personal Access Token instead.
