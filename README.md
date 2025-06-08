@@ -161,8 +161,8 @@ Here are some essential Git commands used in this project:
 **Push to Github**
 
     git push origin main
-
-Under username enter your github username and in password you need to enter Personal Access Token as GitHub removed password authentication for Git over HTTPS. So, we need to use a Personal Access Token (PAT) instead of your GitHub password when pushing or pulling.
+    
+GitHub removed password authentication for Git over HTTPS. So, we need to use a Personal Access Token (PAT) instead of your GitHub password when pushing or pulling.
 
 **How to generate a Personal Access Token (PAT) on GitHub**
 
