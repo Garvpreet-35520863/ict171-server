@@ -35,7 +35,7 @@ This document outlines the process of setting up a cloud-based web server on Ama
 
 On your local terminal:
 
+      cd /path/to/your/ssh/key
+Followed by 
 
-cd /path/to/your/ssh/key
-
-ssh -i "ICT_20863.pem" ubuntu@<your-ec2-ip>
+      ssh -i "ICT_20863.pem" ubuntu@<your-ec2-ip>
