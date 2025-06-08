@@ -168,21 +168,21 @@ Under username enter your github username and in password you need to enter Pers
 
 1. Go to https://github.com/settings/tokens (you need to be logged in).
 
-2. Click "Generate new token" (or “Generate new token (classic)”).
+2. Click "Generate new token classic”.
 
-3. Give it a name, e.g., ICT171 project token.
+3. Give it a name ICT171-Server project token.
 
 4. Set an expiration date (e.g., 30 days or longer if you want).
 
 5. Under Select scopes, check:
-
+   
     repo (Full control of private repositories) — this lets you push and pull code.
-
+   
     You can leave other scopes unchecked for this purpose.
 
-6. Click Generate token.
+7. Click Generate token.
 
-7. Copy the token immediately (you won’t see it again).
+8. Copy the token immediately (you won’t see it again).
 
 **Using the PAT in your terminal when Git asks for password**
 
