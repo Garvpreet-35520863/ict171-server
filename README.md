@@ -5,7 +5,7 @@
 **Server IP Address:** 13.238.194.41  
 **DNS Entry:** [https://beyondknown.xyz](https://beyondknown.xyz)  
 **GitHub Repository:** [https://github.com/Garvpreet-35520863/ict171-server](https://github.com/Garvpreet-35520863/ict171-server)  
-**Video Explainer:** [Link to video hosted on YouTube or similar platform]
+**Video Explainer:** https://youtu.be/3i4dNPz3Jb0
 
 ---
 
