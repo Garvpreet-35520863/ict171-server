@@ -70,10 +70,12 @@ This removes all fles in the html folder.
 
 On your machine use 'cd' to move to the directory where you have stored your html, css and other important file for website.
 Use:
+
 SCP(secure copy)
-scp is a command-line tool used to securely copy files or directories between:
-•	Your local machine ↔️ a remote server
+scp is a command-line tool used to securely copy files or directories between: Your local machine <-> a remote server.
+
 It uses SSH encryption, so it’s secure and doesn't need extra setup if SSH is already working.
+
 Syntax -> 
 
     scp -i path to key -r path of file/directory to copy ubuntu@ip address:path to destination
